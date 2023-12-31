@@ -428,7 +428,6 @@ static int hdd_ocb_set_config_req(struct hdd_adapter *adapter,
 					WLAN_START_ALL_NETIF_QUEUE_N_CARRIER,
 					WLAN_CONTROL_PATH);
 
-	/* fall through */
 end:
 	osif_request_put(request);
 
@@ -1516,7 +1515,6 @@ __wlan_hdd_cfg80211_ocb_get_tsf_timer(struct wiphy *wiphy,
 		goto end;
 	}
 
-	/* fall through */
 end:
 	osif_request_put(request);
 
@@ -1786,7 +1784,6 @@ static int __wlan_hdd_cfg80211_dcc_get_stats(struct wiphy *wiphy,
 		goto end;
 	}
 
-	/* fall through */
 end:
 	osif_request_put(request);
 
@@ -2088,7 +2085,6 @@ static int __wlan_hdd_cfg80211_dcc_update_ndl(struct wiphy *wiphy,
 		goto end;
 	}
 
-	/* fall through */
 end:
 	osif_request_put(request);
 

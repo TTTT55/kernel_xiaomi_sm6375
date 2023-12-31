@@ -4039,7 +4039,7 @@ int hdd_wlan_start_modules(struct hdd_context *hdd_ctx, bool reinit)
 	case DRIVER_MODULES_UNINITIALIZED:
 		hdd_nofl_debug("Wlan transitioning (UNINITIALIZED -> CLOSED)");
 		unint = true;
-		/* fallthrough */
+		fallthrough;
 	case DRIVER_MODULES_CLOSED:
 		hdd_nofl_debug("Wlan transitioning (CLOSED -> ENABLED)");
 
@@ -6875,13 +6875,13 @@ struct hdd_adapter *hdd_open_adapter(struct hdd_context *hdd_ctx, uint8_t sessio
 			}
 		}
 
-	/* fall through */
+		fallthrough;
 	case QDF_P2P_CLIENT_MODE:
 
 		if (hdd_max_sta_vdev_count_reached(hdd_ctx))
 			return NULL;
 
-	/* fall through */
+		fallthrough;
 	case QDF_P2P_DEVICE_MODE:
 	case QDF_OCB_MODE:
 	case QDF_NDI_MODE:
@@ -7531,7 +7531,7 @@ QDF_STATUS hdd_stop_adapter(struct hdd_context *hdd_ctx,
 				hdd_err("Failed to set is_pre_cac_on to false");
 		}
 
-		/* fallthrough */
+		fallthrough;
 
 	case QDF_P2P_GO_MODE:
 		sap_ctx = WLAN_HDD_GET_SAP_CTX_PTR(adapter);
@@ -15181,16 +15181,16 @@ void hdd_dp_trace_init(struct hdd_config *config)
 	switch (num_entries) {
 	case 4:
 		proto_bitmap = config_params[3];
-		/* fall through */
+		fallthrough;
 	case 3:
 		verbosity = config_params[2];
-		/* fall through */
+		fallthrough;
 	case 2:
 		thresh = config_params[1];
-		/* fall through */
+		fallthrough;
 	case 1:
 		live_mode = config_params[0];
-		/* fall through */
+		fallthrough;
 	default:
 		hdd_debug("live_mode %u thresh %u time_limit %u verbosity %u bitmap 0x%x",
 			  live_mode, thresh, thresh_time_limit,
@@ -17476,7 +17476,7 @@ static void hdd_stop_present_mode(struct hdd_context *hdd_ctx,
 		hdd_info("Release wakelock for monitor mode!");
 		qdf_wake_lock_release(&hdd_ctx->monitor_mode_wakelock,
 				      WIFI_POWER_EVENT_WAKELOCK_MONITOR_MODE);
-		/* fallthrough */
+		fallthrough;
 	case QDF_GLOBAL_MISSION_MODE:
 	case QDF_GLOBAL_FTM_MODE:
 		hdd_abort_mac_scan_all_adapters(hdd_ctx);

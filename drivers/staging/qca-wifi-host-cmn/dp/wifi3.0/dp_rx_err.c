@@ -909,7 +909,6 @@ dp_rx_bar_frame_handle(struct dp_soc *soc,
 
 	switch (reo_err_code) {
 	case HAL_REO_ERR_BAR_FRAME_2K_JUMP:
-		/* fallthrough */
 	case HAL_REO_ERR_BAR_FRAME_OOR:
 		dp_rx_err_handle_bar(soc, peer, nbuf);
 		DP_STATS_INC(soc,
