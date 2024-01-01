@@ -811,6 +811,8 @@ KBUILD_CFLAGS += $(call cc-disable-warning, unused-but-set-variable)
 
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-const-variable)
 
+KBUILD_CFLAGS += $(call cc-option,-Wno-error=maybe-uninitialized,)
+
 # These result in bogus false positives
 KBUILD_CFLAGS += $(call cc-disable-warning, dangling-pointer)
 
